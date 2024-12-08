@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ventilation Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- jQuery -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> -->
+        <!-- <script src="jquery.js"></script> -->
+
+        <!-- ChartJs -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- CSS -->
+        <style>
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body, h1, h2, h3, h4, p, figure, blockquote, article, dl, dd, ul, li {
+                margin: 0;
+                padding: 0;
+            }
+
+            button {
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+
+            .one {
+                background-color: #37383f;
+            }
+            .two {
+                background-color: #242529;
+            }
+            .three {
+                background-color: #37383f;
+            }
+            
+            .card {
+                padding: 0.5rem;
+                border-radius: 1rem;
+            }
+
+            .bold {
+                font-weight: 700;
+            }
+
+            .lrg {
+                font-size: 4.5rem;
+            }
+
+            .light {
+                color: #dcdcdd;
+            }
+
+            body {
+                background-color: #dcdcdd;
+                font-family: sans-serif;
+                color: #dcdcdd;
+                text-rendering: optimizeSpeed;
+                min-height: 100vh;
+                line-height: 1.5;
+                width: 90%;
+                margin: 0 auto;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            header {
+                margin-bottom: 3rem;
+
+                & .container {
+                    display: flex;
+                    gap: 1rem;
+                }
+            }
+
+            h1 {
+                line-height: 1;
+                font-weight: 500;
+                margin-bottom: 0.75rem;
+            }
+
+            .dateTime {
+                background-color: #3ba3ea;
+                width: fit-content;
+                color: #242529;
+                line-height: 1.1;
+
+                & .time {
+                    font-size: 1rem;
+                }
+
+                & .date {
+                    font-size: 0.75rem;
+                }
+            }
+
+            .readings {
+                color: #dcdcdd;
+                display: grid;
+                grid-template-areas: "temp hum"
+                "intake exhaust";
+                gap: 1rem;
+                line-height: 1.2;
+                margin-bottom: 1.5rem;
+
+                & .card {
+                    width: 100%;
+                }
+
+                & .temp {grid-area: temp;}
+                & .hum {grid-area: hum;}
+                & .int {grid-area: intake;}
+                & .exh {grid-area: exhaust;}
+            }
+            
+            canvas {
+                border-radius: 1rem;
+                padding: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            @media only screen and (min-width: 720px) {
+                .readings {
+                    grid-template-areas: "temp hum intake exhaust";
+                }
+
+                header {
+                    display: grid;
+                    grid-template-areas: "date title";
+                    align-items: center;
+                }
+
+                .dateTime {
+                    grid-area: date;
+                }
+
+                h1 {
+                    grid-area: title;
+                    justify-self: end;
+                    margin-bottom: 0;
+                }
+            }
+
+            @media only screen and (min-width: 1020px) {
+                h1 {
+                    font-size: 3rem;
+                }
+
+                .charts {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                canvas {
+                    flex: 1;
+                    max-width: 49%;
+                    max-height: 325px;
+                    margin-bottom: 0;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <h1>Dashboard</h1>
+            <div class="container">
+                <div class="dateTime card">
+                    <p class="time bold" id="time">23:00</p>
+                    <p class="date" id="date">Friday, 10 Nov</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="readings">
+            <div class="card temp one">
+                <p class="tag">Temperature</p>
+                <p class="value"><span id="tempValue" class="bold lrg">27</span><span class="sign">°C</span></p>
+            </div>
+            <div class="card hum two">
+                <p class="tag">Humidity</p>
+                <p class="value"><span id="humValue" class="bold lrg">56</span><span class="sign">%</span></p>
+            </div>
+            <div class="card int three light">
+                <p class="tag">Intake Fan</p>
+                <p class="value"><span id="intakeValue" class="bold lrg">27</span><span class="sign">%</span></p>
+            </div>
+            <div class="card exh two">
+                <p class="tag">Exhaust Fan</p>
+                <p class="value"><span id="exhaustValue" class="bold lrg">0</span><span class="sign">%</span></p>
+            </div>
+        </section>
+
+        <div class="charts">
+            <canvas id="tempChart"></canvas>
+            <canvas id="humChart"></canvas>
+        </div>
+
+    </body>
+    <script src="app.js"></script>
+</html>
