@@ -8,14 +8,14 @@ This project introduces a remotely controlled ventilation system powered by the 
 
 ## Features
 
-- 🌡️ Real-time temperature and humidity monitoring
-- 🌪️ Automated fan control using fuzzy logic
-- 💾 Local data logging on microSD card
-- 🌐 Web-based user interface with live sensor data display
-- 📶 Wireless communication via Raspberry Pi Pico W
-- 📲 WhatsApp notifications using CallMeBot API
-- 🔌 Compact, breadboard-based prototype with recyclable housing
-- 🧠 Simulation and implementation using MATLAB and Python
+- Real-time temperature and humidity monitoring
+- Automated fan control using fuzzy logic
+- Local data logging on microSD card
+- Web-based user interface with live sensor data display
+- Wireless communication via Raspberry Pi Pico W
+- WhatsApp notifications using CallMeBot API
+- Compact, breadboard-based prototype with recyclable housing
+- Simulation and implementation using MATLAB and Python
 
 ---
 
