@@ -68,15 +68,15 @@ log_to_sd_card(temperature, humidity, fan_speed)
 ## Screenshots and Visuals
 ### Web Interface
 
-!interface
+![](interface)
 
 ### Fuzzy Logic Flowchart
 
-!fuzzy
+![](https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/refs/heads/main/images/fuzzy.png)
 
 ### Testing
 
-!test
+![](test)
 
 ## Contributors / Acknowledgements
 
