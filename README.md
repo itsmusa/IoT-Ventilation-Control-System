@@ -56,7 +56,7 @@ log_to_sd_card(temperature, humidity, fan_speed)
 
 ### System Block Diagram
 
-!block
+![](https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/refs/heads/main/images/block.png)
 
 ### Key Modules
 
@@ -68,7 +68,7 @@ log_to_sd_card(temperature, humidity, fan_speed)
 ## Screenshots and Visuals
 ### Web Interface
 
-![](interface)
+![]([interface](https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/refs/heads/main/images/interface.png))
 
 ### Fuzzy Logic Flowchart
 
@@ -76,7 +76,7 @@ log_to_sd_card(temperature, humidity, fan_speed)
 
 ### Testing
 
-![](test)
+![]([test](https://raw.githubusercontent.com/itsmusa/IoT-Ventilation-Control-System/refs/heads/main/images/test.png))
 
 ## Contributors / Acknowledgements
 
