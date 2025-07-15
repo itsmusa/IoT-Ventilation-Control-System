@@ -2,131 +2,112 @@
 
 ## Project Overview
 
-This project introduces a remotely controlled ventilation system powered by the Internet of Things (IoT) and fuzzy logic. Designed to optimize indoor environmental conditions, the system automatically monitors and adjusts temperature and humidity levels in real-time. A user-friendly web interface provides live feedback and control, enhancing comfort and energy efficiency. Applications range from homes and server rooms to greenhouses and industrial facilities.
-
----
+This project integrates **Internet of Things (IoT)** and **fuzzy logic control** to automate and remotely manage air ventilation in enclosed environments. It aims to maintain optimal temperature and humidity levels, improving air quality and energy efficiency. The system is designed for applications in homes, server rooms, greenhouses, and industrial facilities.
 
 ## Features
 
-- Real-time temperature and humidity monitoring
-- Automated fan control using fuzzy logic
-- Local data logging on microSD card
-- Web-based user interface with live sensor data display
-- Wireless communication via Raspberry Pi Pico W
-- WhatsApp notifications using CallMeBot API
-- Compact, breadboard-based prototype with recyclable housing
-- Simulation and implementation using MATLAB and Python
-
----
+- 🌡️ **Real-time Monitoring** of temperature and humidity
+- 🧠 **Fuzzy Logic Control** for fan speed adjustment
+- 📶 **Wireless Communication** via Raspberry Pi Pico W
+- 💾 **Local Data Logging** on microSD card
+- 🌐 **Web-based User Interface** for remote control
+- 📲 **WhatsApp Notifications** using CallMeBot API
+- 🔌 **Energy-efficient Operation** with automated fan control
 
 ## Installation
 
 ### Requirements
 
-- **Microcontroller:** Raspberry Pi Pico W  
-- **Sensors:** DHT11 (Temperature and Humidity)  
-- **Fan Driver:** L298N Motor Driver  
-- **Storage:** microSD Card + Module  
-- **Power:** 12V for fans, 5V for Pico W
+- Raspberry Pi Pico W (x2)
+- DHT11 Temperature & Humidity Sensor
+- L298N Motor Driver
+- DC Fans (x2)
+- MicroSD Card Module
+- Power Supply: 12V for fans, 5V for microcontroller
+- HTML, CSS, JavaScript (for UI)
+- Python (for control logic and server)
 
-### Software Dependencies
+### Setup
 
-- Python 3.x
-- HTML, CSS, JavaScript (for the web UI)
-- MATLAB (for fuzzy logic simulation)
-- CallMeBot API access (for notifications)
-
-### Setup Steps
-
-1. **Hardware Assembly:**
-   - Connect DHT11 sensors and DC fans to the Pico W.
-   - Use L298N to control fan speed.
-   - Set up the microSD card module with SPI.
-
-2. **Flashing Code:**
-   - Write the Python control algorithm to the Pico W using Thonny or equivalent.
-   - Include fuzzy logic-based control, data logging, and communication modules.
-
-3. **Web Interface:**
-   - Host HTML/CSS/JavaScript files on the Pico W.
-   - Configure the server to serve live sensor data and graphs.
-
-4. **Power Supply:**
-   - Ensure 12V supply for fans and 5V regulated power for Pico W.
-
----
+1. Connect sensors and fans to the Pico W as per schematics.
+2. Flash Python code to the Pico W.
+3. Configure Wi-Fi credentials.
+4. Set up the microSD card for data logging.
+5. Host the web interface on the Pico W.
+6. Integrate CallMeBot API for notifications.
 
 ## Usage
 
-### System Operation
+### Workflow
 
 ```python
-# Pseudocode for basic operation
-read_temperature_humidity()
-fuzzy_logic_control()
-adjust_fan_speed()
-log_data_to_sd()
-update_web_dashboard()
+temperature, humidity = read_dht11()
+fan_speed = fuzzy_control(temperature, humidity)
+update_web_interface(fan_speed)
+log_to_sd_card(temperature, humidity, fan_speed)
 ```
+## Web Interface
 
-### Accessing the Dashboard
-
-1. Connect to the same Wi-Fi network as the Pico W.
-2. Open a browser and navigate to the Pico W’s IP address.
-3. View live readings, control fan behavior, and check historical data.
-
-### Retrieving Stored Data
-
-- Eject the microSD card from the unit.
-- Use a card reader to access `.txt` logs from any PC.
-
----
+- Displays live temperature and humidity  
+- Shows fan speed and historical data graph  
+- Accessible via local network  
 
 ## Architecture
 
 ### System Block Diagram
 
-![System Block Diagram](images/system_block_diagram.png)
+!System Block Diagram
 
-### Functional Breakdown
+### Key Modules
 
-- **Sensor Unit:** Reads temperature and humidity via DHT11 sensors.
-- **Fan Controller:** Uses fuzzy logic to set fan speed.
-- **Data Logging:** Saves periodic readings to a local microSD card.
-- **Web Server:** Hosts dashboard and handles REST API communication.
-
----
+- **Sensor Unit**: DHT11 sensors connected to Pico W  
+- **Fan Controller**: L298N driver adjusts fan speed  
+- **Data Logger**: microSD module stores readings  
+- **Web Server**: REST API hosted on Pico W  
 
 ## Screenshots and Visuals
 
-| Image | Description |
-|-------|-------------|
-| ![Breadboard Prototype](images/breadboard_prototype.png) | Breadboard assembly of prototype. |
-| ![User Interface](images/user_interface.png) | Web dashboard showing real-time data and controls. |
-| ![Data Stored](images/data_stored.png) | Sample view of locally logged data. |
-| ![Testing Setup](images/heating_test.png) | Prototype undergoing environmental simulation with hot water. |
+### Sensor Circuit
 
----
+!Sensor Unit
+
+### Fan Controller
+
+!Fan Controller
+
+### Data Logging Module
+
+!Data Logger
+
+### Web Interface
+
+!User Interface
+
+### Fuzzy Logic Flowchart
+
+!Fuzzy Logic
+
+### Prototype
+
+!Breadboard Prototype
+
+### Housing
+
+!Housing Construction
+
+### Testing
+
+!Cooling Test  
+!Heating Test
 
 ## Contributors / Acknowledgements
 
-**Author:**  
-- Magwaza MST (Student No. 22045698)  
-**Institution:**  
-- Department of Electronic and Computer Engineering  
-**Supervisor(s):**  
-- [Not listed in document]
-
----
+- **Author**: Magwaza MST (Student No: 22045698)  
+- **Institution**: Department of Electronic and Computer Engineering  
+- **Course**: Electronic Design Project 3B (EDPB301)  
+- **Supervisor**: Not explicitly listed in the report  
 
 ## License
 
-This project is academic and does not include a formal license. Please contact the author for reuse permissions.
-
----
-
-### Notes
-
-- All images should be placed in an `/images` directory within the repository.
-- Ensure any sensitive data (e.g., API keys) are excluded from version control.
-- For production, consider adding cloud backup and user download capabilities.
+This project is part of an academic submission and may be subject to institutional copyright.  
+For reuse or adaptation, please contact the author or institution.
