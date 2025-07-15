@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project integrates **Internet of Things (IoT)** and **fuzzy logic control** to automate and remotely manage air ventilation in enclosed environments. It aims to maintain optimal temperature and humidity levels, improving air quality and energy efficiency. The system is designed for applications in homes, server rooms, greenhouses, and industrial facilities.
+This project integrates **Internet of Things (IoT)** and **fuzzy logic control** to automate and remotely manage air ventilation in enclosed environments. It aims to maintain optimal temperature and humidity levels, improving air quality. The system was designed for applications in homes, server rooms, greenhouses, and industrial facilities.
 
 ## Features
 
@@ -29,12 +29,12 @@ This project integrates **Internet of Things (IoT)** and **fuzzy logic control**
 
 ### Setup
 
-1. Connect sensors and fans to the Pico W as per schematics.
-2. Flash Python code to the Pico W.
-3. Configure Wi-Fi credentials.
+1. Connected sensors and fans to the Pico W as per schematics.
+2. Flashed Python code to the Pico W.
+3. Configured Wi-Fi credentials.
 4. Set up the microSD card for data logging.
-5. Host the web interface on the Pico W.
-6. Integrate CallMeBot API for notifications.
+5. Hosted the web interface on the Pico W.
+6. Integrated CallMeBot API for notifications
 
 ## Usage
 
@@ -48,8 +48,8 @@ log_to_sd_card(temperature, humidity, fan_speed)
 ```
 ## Web Interface
 
-- Displays live temperature and humidity  
-- Shows fan speed and historical data graph  
+- Displayed live temperature and humidity  
+- Showed fan speed and historical data graph  
 - Accessible via local network  
 
 ## Architecture
@@ -88,5 +88,5 @@ log_to_sd_card(temperature, humidity, fan_speed)
 
 ## License
 
-This project is part of an academic submission and may be subject to institutional copyright.  
+This project was part of an academic submission and may be subject to institutional copyright.  
 For reuse or adaptation, please contact the author or institution.
