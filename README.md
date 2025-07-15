@@ -56,7 +56,7 @@ log_to_sd_card(temperature, humidity, fan_speed)
 
 ### System Block Diagram
 
-!System Block Diagram
+!block
 
 ### Key Modules
 
@@ -66,46 +66,25 @@ log_to_sd_card(temperature, humidity, fan_speed)
 - **Web Server**: REST API hosted on Pico W  
 
 ## Screenshots and Visuals
-
-### Sensor Circuit
-
-!Sensor Unit
-
-### Fan Controller
-
-!Fan Controller
-
-### Data Logging Module
-
-!Data Logger
-
 ### Web Interface
 
-!User Interface
+!interface
 
 ### Fuzzy Logic Flowchart
 
-!Fuzzy Logic
-
-### Prototype
-
-!Breadboard Prototype
-
-### Housing
-
-!Housing Construction
+!fuzzy
 
 ### Testing
 
-!Cooling Test  
-!Heating Test
+!test
 
 ## Contributors / Acknowledgements
 
-- **Author**: Magwaza MST (Student No: 22045698)  
+- **Author**: Musa Magwaza (Student No: 22045698)  
 - **Institution**: Department of Electronic and Computer Engineering  
 - **Course**: Electronic Design Project 3B (EDPB301)  
-- **Supervisor**: Not explicitly listed in the report  
+- **Supervisor**: Mr J Dlamini
+- **Durban University of Technology**
 
 ## License
 
